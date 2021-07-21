@@ -76,8 +76,9 @@ def create_app():
             _history['history'].append({
                 'id': p.id,
                 'ipAddress': p.ip_address,
-                'created': p.created,
+                'created': p.created.strftime("%d/%m/%Y, %H:%M:%S"),
             })
+        print(_history)
         return jsonify(_history)
     # End
 
